@@ -11,5 +11,7 @@ COPY webgoat-server-8.2.2.jar /app/WebGoat.jar
 EXPOSE 8080
 
 # Run WebGoat when the container starts
-CMD ["java", "-jar", "/app/WebGoat.jar"]
+#CMD ["java", "-jar", "/app/WebGoat.jar"]
+
+CMD ["sh", "-c", "java -jar /app/WebGoat.jar & sleep infinity"]
 
