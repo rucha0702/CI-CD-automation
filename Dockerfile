@@ -13,5 +13,5 @@ EXPOSE 8080
 # Run WebGoat when the container starts
 #CMD ["java", "-jar", "/app/WebGoat.jar"]
 
-CMD ["sh", "-c", "java -jar /app/WebGoat.jar & sleep infinity","--server.port=8080"]
+CMD ["sh", "-c", "java -jar /app/WebGoat.jar & sleep infinity","--server.port=8080","--server.address=0.0.0.0"]
 
