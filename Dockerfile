@@ -1,5 +1,5 @@
 # Use OpenJDK base image
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jdk-slim
 
 # Set working directory inside the container
 WORKDIR /app
@@ -13,5 +13,5 @@ EXPOSE 8080
 # Run WebGoat when the container starts
 #CMD ["java", "-jar", "/app/WebGoat.jar"]
 
-CMD ["sh", "-c", "java -jar /app/WebGoat.jar & sleep infinity"]
+CMD ["sh", "-c", "java -jar /app/WebGoat.jar & sleep infinity","--server.port=8080"]
 
