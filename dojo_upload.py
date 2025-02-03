@@ -18,7 +18,7 @@ def fetch_sonarqube_issues():
             "p": 1
         }
         response = requests.get(sonarqube_url, params=params)
-        response.raise_for_status()  # Raise HTTP errors
+        #response.raise_for_status()  # Raise HTTP errors
         data = response.json()
         issues = data.get('issues', [])
         all_issues.extend(issues)
