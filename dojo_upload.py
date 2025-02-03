@@ -4,8 +4,8 @@ import os
 
 # Fetch SonarQube issues with pagination
 def fetch_sonarqube_issues():
-    sonarqube_url = os.getenv('http://54.160.99.203:9000/api/issues/search')
-    component_key = os.getenv('webgoat')
+    sonarqube_url = os.getenv('SONARQUBE_URL','http://54.160.99.203:9000/api/issues/search')
+    component_key = os.getenv('SONARQUBE_COMPONENT_KEY','webgoat')
     all_issues = []
     page = 1
     page_size = 500  # Max allowed by SonarQube
@@ -32,7 +32,7 @@ def fetch_sonarqube_issues():
 
 # Upload to DefectDojo
 def upload_to_defectdojo(issues):
-    defectdojo_url = os.getenv('https://demo.defectdojo.org/api/v2/import-scan/') 
+    defectdojo_url = os.getenv('DEFECT_DOJO_URL','https://demo.defectdojo.org/api/v2/import-scan/') 
     api_key = os.getenv('548afd6fab3bea9794a41b31da0e9404f733e222')
     engagement_id = os.getenv('14')
 
