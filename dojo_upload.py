@@ -12,7 +12,7 @@ def fetch_sonarqube_issues():
 
     while True:
         params = {
-            "componentKeys": webgoat,
+            "componentKeys": component_key,
             "resolved": "false",
             "ps": 100,
             "p": 1
